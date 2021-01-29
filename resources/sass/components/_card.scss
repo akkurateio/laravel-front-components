@@ -1,0 +1,77 @@
+.card__item {
+    position: relative;
+    @include transition(all .3s ease-out);
+
+    &.simple {
+        height: 50vh;
+        min-height: 32rem;
+
+        img {
+            @include transition(all .3s ease-out);
+            border-radius: 1rem;
+        }
+
+        .inner {
+            position: relative;
+            height: 100%;
+        }
+
+        .cover {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .info {
+            position: relative;
+            z-index: 1;
+        }
+
+        &:hover {
+            @include scale(1.05);
+            text-decoration: none;
+            z-index: 1;
+
+            img {
+                @include boxShadow(0 25px 50px -12px rgba(0, 0, 0, 0.25) !important);
+            }
+        }
+    }
+
+    &.dual {
+        .inner {
+            @include transition(all .3s ease-out);
+            border-radius: 1rem;
+        }
+
+        img {
+            border-radius: 1rem 1rem 0 0;
+        }
+
+        &:hover {
+            @include scale(1.05);
+            text-decoration: none;
+            z-index: 1;
+
+            .inner {
+                @include boxShadow(0 25px 50px -12px rgba(0, 0, 0, 0.25) !important);
+            }
+        }
+    }
+}
+
+.card-odd {
+    margin-top: $akk-unit * -2;
+}
+
+.card {
+    border-radius: 1rem;
+}
+
+.use-cases {
+    img {
+        border-radius: 1rem;
+    }
+}

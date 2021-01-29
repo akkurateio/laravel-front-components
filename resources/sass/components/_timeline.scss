@@ -1,0 +1,23 @@
+.timeline {
+    @include display-grid();
+    @include grid-template-rows(64px 1fr);
+    @include grid-template-columns(1fr);
+    height: 100%;
+    overflow: hidden;
+
+    &__header {
+        @include grid-row(1);
+        @include grid-column(1);
+    }
+
+    &__body {
+        @include grid-row(2);
+        @include grid-column(1);
+        overflow-y: auto;
+    }
+
+    .nav {
+        font-size: .85rem;
+    }
+}
+

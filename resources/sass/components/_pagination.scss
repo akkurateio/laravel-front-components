@@ -1,0 +1,44 @@
+.pagination {
+    margin-bottom: 0;
+}
+
+.page-item {
+
+    &.disabled {
+        .page-link {
+            background-color: transparent;
+            border: none;
+            color: $gray-200;
+        }
+    }
+
+    &:first-child {
+        .page-link {
+            border-radius: 9999px;
+        }
+    }
+
+    &:last-child {
+        .page-link {
+            background-color: $primary;
+            color: $white;
+            border-radius: 9999px;
+
+            &:hover {
+                background-color: $primary-dark;
+            }
+        }
+    }
+}
+
+.page-link {
+    background-color: $gray-100;
+    text-decoration: none !important;
+    margin: 0;
+    border: none;
+    padding: 0;
+
+    &:hover {
+        background-color: $gray-400;
+    }
+}

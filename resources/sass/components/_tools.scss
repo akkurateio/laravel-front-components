@@ -1,0 +1,25 @@
+.tool-category {
+    position: relative;
+    display: block;
+    background-color: $primary;
+    @include transition(all .3s ease);
+
+    .tool-category-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        color: $white;
+        padding: $akk-unit * .5;
+        height: $akk-unit * 4;
+
+        .brand {
+            width: $akk-unit * .35;
+        }
+    }
+
+    &:hover {
+        //@include transform(scale(1.1) rotate(2.5deg));
+        @include scale(1.1);
+        @include boxShadow(0 20px 25px -5px rgba(0, 0, 0, 0.3) !important);
+    }
+}

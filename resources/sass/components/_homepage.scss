@@ -1,0 +1,25 @@
+#carouselHomepage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+
+    .carousel {
+        height: 100%;
+        padding: 0;
+    }
+
+    .controls {
+        margin-right: $akk-unit * 1.5;
+
+        @include media-breakpoint-down(xs) {
+            margin-bottom: $akk-unit;
+        }
+
+        .btn {
+            color: $white;
+        }
+    }
+}

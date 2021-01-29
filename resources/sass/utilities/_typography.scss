@@ -1,0 +1,225 @@
+//$text-sizes
+//
+@each $name, $size in $font-sizes {
+    .text-#{$name} {
+        font-size: #{$size}rem !important;
+    }
+
+    @each $breakpoint, $width in $grid-breakpoints {
+        .text-#{$breakpoint}-#{$name} {
+            @include media-breakpoint-up($breakpoint) {
+                font-size: #{$size}rem !important;
+            }
+        }
+    }
+
+    @if $size > 2 {
+        @include media-breakpoint-down(xs) {
+            .text-#{$name} {
+                font-size: #{$size * .7}rem !important;
+            }
+        }
+    }
+}
+
+.font-thin {
+    font-weight: 100 !important;
+}
+
+.font-extralight {
+    font-weight: 200 !important;
+}
+
+.font-light {
+    font-weight: 300 !important;
+}
+
+.font-normal {
+    font-weight: 400 !important;
+}
+
+.font-medium {
+    font-weight: 500 !important;
+}
+
+.font-semibold {
+    font-weight: 600 !important;
+}
+
+.font-bold {
+    font-weight: 700 !important;
+}
+
+.font-extrabold {
+    font-weight: 800 !important;
+}
+
+.font-black {
+    font-weight: 900 !important;
+}
+
+.tracking-tighter {
+    letter-spacing: -0.05em;
+}
+
+.tracking-tight {
+    letter-spacing: -0.025em;
+}
+
+.tracking-normal {
+    letter-spacing: 0;
+}
+
+.tracking-wide {
+    letter-spacing: 0.025em;
+}
+
+.tracking-wider {
+    letter-spacing: 0.05em;
+}
+
+.tracking-widest {
+    letter-spacing: 0.1em;
+}
+
+.leading-none {
+    line-height: 1;
+}
+
+.leading-tighter {
+    line-height: 1.25;
+}
+
+.leading-tight {
+    line-height: 1.375;
+}
+
+.leading-normal {
+    line-height: 1.5;
+}
+
+.leading-wide {
+    line-height: 1.625;
+}
+
+.leading-wider {
+    line-height: 2;
+}
+
+.text-discount {
+    color: darken($warning, 10%);
+}
+
+.text-decoration-underline {
+    text-decoration: underline !important;
+}
+
+.text-underscore::after {
+    content: " ";
+    margin-top: 1.5rem;
+    display: block;
+    background-color: $blue;
+    width: 6rem;
+    height: 0.25rem;
+}
+
+.text-underscore-sm::after {
+    content: " ";
+    margin-top: .75rem;
+    display: block;
+    background-color: $blue;
+    width: 3rem;
+    height: 0.15rem;
+}
+
+.text-underscore-white::after {
+    background-color: $white !important;
+}
+
+.text-underscore-black::after {
+    background-color: $black !important;
+}
+
+.kpi {
+    .kpi-data {
+        line-height: 1.1;
+    }
+}
+
+.field {
+    margin-bottom: .5rem;
+}
+
+.field-label {
+    font-size: .65rem;
+    color: $gray-500;
+}
+
+.block__content {
+    h2, h3, h4, h5, h6 {
+        margin-bottom: 1.25rem;
+    }
+
+    h2 {
+        margin-top: 2.5rem;
+        font-weight: $font-weight-bold;
+    }
+
+    h3 {
+        margin-top: 2rem;
+    }
+
+    h4 {
+        margin-top: 1.5rem;
+    }
+
+    h5 {
+        margin-top: 1.25rem;
+    }
+
+    h6 {
+        margin-top: 1rem;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    figure {
+        margin: 3rem 0;
+    }
+
+    figcaption {
+        margin-top: 1rem;
+        text-align: center;
+        font-size: .8rem;
+        color: $gray-600;
+    }
+
+    blockquote {
+        position: relative;
+        margin: 2rem -1rem;
+        padding: 0 1rem 0 3rem;
+
+        &:before {
+            font-family: $font-family-serif;
+            position: absolute;
+            top: -1rem;
+            left: 0;
+            content: '“';
+            font-size: 3rem;
+            color: $gray-200;
+        }
+
+        &:after {
+            font-family: $font-family-serif;
+            position: absolute;
+            bottom: -1rem;
+            right: 0;
+            content: 'ˮ';
+            font-size: 3rem;
+            color: $gray-200;
+        }
+    }
+}

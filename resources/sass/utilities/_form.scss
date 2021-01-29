@@ -1,0 +1,61 @@
+.form-group {
+    margin-bottom: .35rem;
+
+    label {
+        font-size: .75rem;
+        color: $gray-500;
+        margin-bottom: .25rem;
+    }
+
+    input + label {
+        font-size: 1rem;
+        color: $dark;
+        margin-bottom: 0;
+    }
+
+    &.field-mandatory {
+        label {
+            color: $gray-700;
+            font-weight: 500;
+        }
+    }
+}
+
+.has-error {
+    label {
+        color: $danger;
+    }
+
+    input, textarea, select {
+        border-color: $danger;
+    }
+}
+
+.help-block {
+    margin-top: .35rem;
+    font-size: .7rem;
+    color: $gray-400;
+}
+
+.form-select {
+    .dropdown-menu {
+        padding: 0;
+    }
+}
+
+.errors {
+    .errors-message {
+        color: $danger;
+        display: none;
+    }
+
+    &.has-error {
+        border-left: solid 3px $danger;
+        padding-left: .5rem;
+        margin: 1rem 0;
+
+        .errors-message {
+            display: block;
+        }
+    }
+}

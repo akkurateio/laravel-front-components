@@ -1,0 +1,53 @@
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .bg-primary & {
+        svg {
+            fill: #fff;
+        }
+    }
+    .bg-dark & {
+        svg {
+            fill: #fff;
+        }
+    }
+    &.white {
+        svg {
+            fill: #fff;
+        }
+    }
+    &.gray {
+        svg {
+            fill: $gray-500;
+        }
+    }
+    &.primary {
+        svg {
+            fill: $primary;
+        }
+    }
+    &.success {
+        svg {
+            fill: $success;
+        }
+    }
+    &.dark {
+        svg {
+            fill: $body-color;
+        }
+    }
+    &.muted {
+        svg {
+            fill: $text-muted;
+        }
+    }
+}
+
+.icon-box {
+    width: $akk-unit;
+    height: $akk-unit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

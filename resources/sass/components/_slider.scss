@@ -1,0 +1,105 @@
+.slider-slide {
+    &.fullpage {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+.slider-overlay {
+    z-index: 1;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .slider-slide {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .slider-pagination {
+
+        top: 50%;
+        transform: translateY(-50%);
+        right: 30px;
+        list-style: none;
+        z-index: 9;
+
+        li {
+            position: relative;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            cursor: pointer;
+
+            .slot {
+                transition: all .6s ease;
+                display: inline-block;
+                margin-left: 0.5rem;
+                width: $akk-unit * .25;
+                height: 6px;
+                text-align: right;
+            }
+
+            .title {
+                @include transition(all .2s ease);
+                opacity: 0;
+            }
+
+            @include hover-supported(){
+                .slot {
+                    width: $akk-unit * .5;
+                }
+
+                .title {
+                    opacity: 1;
+                }
+            }
+
+            &.slider-pagination-bullet-active {
+                .slot {
+                    width: $akk-unit;
+                }
+            }
+        }
+    }
+}
+
+
+
+.slide-leave-active, .slide-fade-enter-active {
+    transition: all 1s ease-in-out;
+}
+.slide-enter-to, .slide-leave {
+    transform: translate(0, -100%);
+}
+
+.slide-leave-to, .slide-enter {
+    transform: translate(0, 100%);
+}
+
+.img-slider {
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+    width: 400px;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}

@@ -1,0 +1,175 @@
+$modal-width-medium: 600px;
+
+.akk-dialog-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($primary-darkest, .8);
+}
+
+.akk-modal {
+    display: flex;
+    flex-direction: column;
+    background: $white;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    padding: $akk-unit / 2;
+    z-index: 101;
+    max-height: 100vh;
+    overflow: auto;
+
+    .close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        text-align: center;
+        text-shadow: none;
+        z-index: 99;
+
+        svg {
+            width: 48px;
+            height: 48px;
+        }
+
+        .close-label {
+            font-size: .7rem;
+            font-weight: normal;
+        }
+
+        &.close-white {
+            svg {
+                fill: $white;
+            }
+
+            .close-label {
+                color: $white;
+            }
+        }
+    }
+
+}
+
+.akk-modal-default {
+    max-width: 400px + $akk-unit;
+    width: 100%;
+}
+
+.akk-modal-medium {
+    width: $modal-width-medium;
+}
+
+.akk-modal-full {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    flex-direction: row;
+}
+
+.akk-modal-timeout {
+    width: 400px + $akk-unit;
+    background-color: $primary;
+    color: $white;
+
+    .text-muted {
+        color: rgba($white, .5) !important;
+    }
+}
+
+.akk-modal-subscribe {
+    .close {
+        top: -1rem;
+        right: -1rem;
+    }
+
+    @include media-breakpoint-down(xs) {
+        height: 100vh;
+    }
+}
+
+.akk-modal-writer {
+    width: $modal-width-medium;
+    padding: 0;
+    @include boxShadow(0px -15px 40px -13px rgba(0,0,0,0.4) !important);
+
+    .akk-model-header {
+        height: 48px;
+    }
+}
+
+.akk-modal-primary {
+    background-color: $primary-dark;
+    color: $white;
+
+    a {
+        color: $white;
+    }
+
+    input[type="search"] {
+        height: 80px;
+        background: $primary-darker;
+        border-color: $primary-darker;
+        color: #fff;
+    }
+    input[type="search"]::-webkit-input-placeholder {
+        color: $primary-lightest;
+        font-size: 16px;
+    }
+}
+
+.akk-modal-alert {
+    background-color: $danger;
+    color: $white;
+}
+
+.akk-modal-clients {
+    overflow-y: auto;
+}
+
+.akk-modal-contact {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    .modal-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 64px;
+        z-index: 99;
+    }
+
+    .brand {
+        width: 4rem;
+    }
+
+    .area-info {
+        background-color: $primary;
+    }
+
+    .area-bot {
+        max-height: 100%;
+        background-color: $white;
+    }
+
+    .chat-area {
+        bottom: 4rem;
+    }
+
+    .message-form {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        padding: 2rem;
+    }
+
+    .icon-button {
+        width: 32px;
+        height: 32px;
+    }
+}

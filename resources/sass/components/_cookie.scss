@@ -1,0 +1,23 @@
+.site__cookie {
+    position: fixed;
+    left: .5rem;
+    bottom: .5rem;
+    width: 280px;
+    background-color: $primary;
+    color: $white;
+    padding: 2rem;
+    z-index: 10;
+    @include border-radius(0.25rem);
+    text-align: center;
+
+    a {
+        color: $white;
+        text-decoration: underline;
+    }
+
+    svg {
+        fill: $white;
+        width: 72px;
+        height: 72px;
+    }
+}

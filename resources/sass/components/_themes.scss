@@ -1,0 +1,210 @@
+.theme {
+    @include transition(fill .3s ease-in .6s, color .3s ease-in .6s, background-color .3s ease-in .6s);
+    //background-position: center center;
+    //background-repeat: no-repeat;
+    //background-size: cover;
+    justify-content: start;
+    min-height: 100vh;
+    width: 100%;
+    color: transparent;
+    background-color: transparent;
+    position: relative;
+
+    a,
+    .brand-logotype,
+    .burger {
+        @include transition(fill .3s ease-in .6s, color .3s ease-in .6s, background-color .3s ease-in .6s);
+    }
+
+    &.theme-secondary {
+        min-height: 50vh;
+        //background-position: bottom right;
+        //background-size: initial;
+    }
+
+    &.theme-short {
+        min-height: 25vh;
+        //background-position: bottom right;
+        //background-size: initial;
+    }
+
+    &.theme-homepage {
+        min-height: initial;
+        //background-position: bottom right;
+        //background-size: initial;
+    }
+
+    &.theme-blog {
+        min-height: initial;
+        height: auto;
+
+        .site__overview__cover {
+            height: 40vh;
+            top: $akk-unit * 1.5;
+        }
+
+        @include media-breakpoint-up(xl) {
+            height: 100vh;
+            //    overflow: hidden;
+            //
+            .site__overview__cover {
+                height: 75vh;
+                top: $akk-unit * 3;
+            }
+
+            .overview-article {
+                padding: 0 1rem 0;
+                margin-top: auto;
+                margin-bottom: 5rem;
+
+                > .container {
+                    background-color: $white;
+                }
+            }
+        }
+    }
+}
+
+.theme-cobalt,
+.theme-black {
+    color: $white;
+
+    .brand-logotype,
+    .burger {
+        fill: $white;
+    }
+
+    .slider-pagination-bullet,
+    .slider-pagination-bullet-active {
+        .slot {
+            background-color: $white !important;
+        }
+    }
+
+    .breadcrumb-item.active {
+        color: rgba($white, .5);
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+        color: rgba($white, .5);
+    }
+
+    a {
+        color: $white;
+    }
+
+    + .site__overview {
+        background-color: $blue;
+        color: $white;
+
+        a {
+            color: $white;
+        }
+    }
+}
+
+.theme-cobalt {
+    background-color: $blue;
+
+    + .site__overview {
+        background-color: $blue;
+    }
+}
+
+.theme-black {
+    background-color: $black;
+
+    + .site__overview {
+        background-color: $black;
+    }
+}
+
+.theme-white {
+    background-color: $white;
+    color: $black;
+
+    .brand-logotype,
+    .burger {
+        fill: $black;
+    }
+
+    .slider-pagination-bullet,
+    .slider-pagination-bullet-active {
+        .slot {
+            background-color: $black !important;
+        }
+    }
+
+    + .site__overview {
+        background-color: $white;
+    }
+
+    .breadcrumb-item.active {
+        color: rgba($black, .5);
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+        color: rgba($black, .5);
+    }
+
+    a {
+        color: $black;
+    }
+
+    + .site__overview {
+        background-color: $white;
+        color: $white;
+
+        a {
+            color: $black;
+        }
+    }
+}
+
+.theme-default {
+    background-color: $white;
+    color: $black;
+
+    .brand-logotype,
+    .burger {
+        fill: $primary;
+    }
+
+    .slider-pagination-bullet,
+    .slider-pagination-bullet-active {
+        .slot {
+            background-color: $primary !important;
+        }
+    }
+
+    + .site__overview {
+        background-color: $white;
+    }
+
+    .breadcrumb-item.active {
+        color: rgba($primary, .5);
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+        color: rgba($primary, .5);
+    }
+
+    a {
+        color: $primary;
+    }
+
+    + .site__overview {
+        background-color: $white;
+        color: $white;
+
+        a {
+            color: $primary;
+        }
+    }
+}
+
+.body-secondary {
+    h2 {
+        margin-top: 2rem;
+    }
+}

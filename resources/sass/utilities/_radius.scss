@@ -1,0 +1,19 @@
+@mixin radius ($properties) {
+    border-radius: $properties !important;
+}
+
+.radius-none {
+    @include radius (0);
+}
+
+.radius-sm {
+    @include radius ($border-radius-sm);
+}
+
+.radius-md {
+    @include radius ($border-radius);
+}
+
+.radius-lg {
+    @include radius ($border-radius-lg);
+}

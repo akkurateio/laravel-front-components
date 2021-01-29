@@ -1,0 +1,66 @@
+.site__footer {
+    padding: $akk-unit 0;
+    background-color: $black;
+    color: $white;
+
+    .brand {
+        width: $akk-unit / 2;
+    }
+
+    .social-link {
+        color: $white;
+        padding: $akk-unit / 8;
+    }
+
+    nav {
+        a {
+            display: block;
+            color: $white;
+            padding: $akk-unit / 8 0;
+        }
+    }
+}
+
+.site__bottom-actions {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 10;
+    width: $akk-unit;
+
+    .chatbot,
+    .back-to-top {
+        width: $akk-unit;
+        height: $akk-unit;
+        color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        @include boxShadow(0 10px 15px -3px rgba(0, 0, 0, 0.4) !important);
+    }
+
+    .chatbot {
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: $white;
+        }
+    }
+
+    .back-to-top {
+        margin-top: .5rem;
+    }
+}
+
+
+.site__debugg {
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+    width: $akk-unit * 3;
+    padding: .5rem;
+    background-color: $primary;
+    color: $white;
+    @include boxShadow(0 10px 15px -3px rgba(0, 0, 0, 0.4) !important);
+}

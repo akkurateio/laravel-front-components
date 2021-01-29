@@ -1,0 +1,21 @@
+.akk-nav {
+    margin-bottom: 0;
+
+    .nav-link {
+        color: $gray-600;
+        background-color: transparent;
+        border-bottom: solid 4px transparent;
+        border-radius: 0;
+        height: $akk-unit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.active {
+            color: $primary;
+            background-color: transparent;
+            border-bottom-color: $primary;
+            font-weight: 600;
+        }
+    }
+}

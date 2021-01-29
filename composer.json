@@ -1,0 +1,17 @@
+{
+    "name": "akkurate/laravel-front-components",
+    "description": "Blade components to quickly build demo pages",
+    "type": "library",
+    "autoload" : {
+        "psr-4": {
+            "Akkurate\\LaravelFrontComponents\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Akkurate\\LaravelFrontComponents\\LaravelFrontComponentsServiceProvider"
+            ]
+        }
+    }
+}

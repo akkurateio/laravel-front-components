@@ -1,0 +1,66 @@
+//
+// BASICS
+//
+
+// display grid
+@mixin display-grid {
+    display: -ms-grid;
+    display: grid;
+}
+
+// grid-template-columns
+@mixin grid-template-columns($config) {
+    grid-template-columns: $config;
+    -ms-grid-columns: $config;
+}
+
+// grid-template-rows
+@mixin grid-template-rows($config) {
+    grid-template-rows: $config;
+    -ms-grid-rows: $config;
+}
+
+// grid-template-rows
+@mixin grid-gap($config) {
+    grid-gap: $config;
+}
+
+// grid-column
+@mixin grid-column($start: auto, $span: 1) {
+    -ms-grid-column: $start;
+    -ms-grid-column-span: if($span > 1, $span + $span - 1, $span);
+
+    @if $span == 1 {
+        grid-column: $start;
+    } @else {
+        grid-column: #{$start} / span #{$span};
+    }
+}
+
+// grid-row
+@mixin grid-row($start: auto, $span: 1) {
+    -ms-grid-row: $start;
+    -ms-grid-row-span: if($span > 1, $span + $span - 1, $span);
+
+    @if $span == 1 {
+        grid-row: $start;
+    } @else {
+        grid-row: #{$start} / span #{$span};
+    }
+}
+
+//
+// ALIGNMENTS
+//
+
+// align-self
+@mixin align-self($config) {
+    align-self: $config;
+    -ms-grid-row-align: $config;
+}
+
+// justify-self
+@mixin justify-self($config) {
+    justify-self: $config;
+    -ms-grid-column-align: $config;
+}

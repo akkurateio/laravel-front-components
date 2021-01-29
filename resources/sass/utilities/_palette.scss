@@ -1,0 +1,74 @@
+$lightest-percentage:              40 !default;
+$lighter-percentage:               30 !default;
+$light-percentage:                 20 !default;
+$dark-percentage:                  10 !default;
+$darker-percentage:                15 !default;
+$darkest-percentage:               20 !default;
+
+$primary-lightest-percentage:      $lightest-percentage !default;
+$primary-lighter-percentage:       $lighter-percentage !default;
+$primary-light-percentage:         $light-percentage !default;
+$primary-dark-percentage:          $dark-percentage !default;
+$primary-darker-percentage:        $darker-percentage !default;
+$primary-darkest-percentage:       $darkest-percentage !default;
+
+$secondary-lightest-percentage:    $lightest-percentage !default;
+$secondary-lighter-percentage:     $lighter-percentage !default;
+$secondary-light-percentage:       $light-percentage !default;
+$secondary-dark-percentage:        $dark-percentage !default;
+$secondary-darker-percentage:      $darker-percentage !default;
+$secondary-darkest-percentage:     $darkest-percentage !default;
+
+$primary-lightest:      lighten($primary, $primary-lightest-percentage) !default;
+$primary-lighter:       lighten($primary, $primary-lighter-percentage) !default;
+$primary-light:         lighten($primary, $primary-light-percentage) !default;
+$primary-dark:          darken($primary, $primary-dark-percentage) !default;
+$primary-darker:        darken($primary, $primary-darker-percentage) !default;
+$primary-darkest:       darken($primary, $primary-darkest-percentage) !default;
+
+$secondary-lightest:    lighten($secondary, $secondary-lightest-percentage) !default;
+$secondary-lighter:     lighten($secondary, $secondary-lighter-percentage) !default;
+$secondary-light:       lighten($secondary, $secondary-light-percentage) !default;
+$secondary-dark:        darken($secondary, $secondary-dark-percentage) !default;
+$secondary-darker:      darken($secondary, $secondary-darker-percentage) !default;
+$secondary-darkest:     darken($secondary, $secondary-darkest-percentage) !default;
+
+$palette: ();
+$palette: map-merge(
+  (
+      "primary-lightest":     $primary-lightest,
+      "primary-lighter":      $primary-lighter,
+      "primary-light":        $primary-light,
+      "primary-dark":         $primary-dark,
+      "primary-darker":       $primary-darker,
+      "primary-darkest":      $primary-darkest,
+      "secondary-lightest":   $secondary-lightest,
+      "secondary-lighter":    $secondary-lighter,
+      "secondary-light":      $secondary-light,
+      "secondary-dark":       $secondary-dark,
+      "secondary-darker":     $secondary-darker,
+      "secondary-darkest":    $secondary-darkest,
+  ),
+  $palette
+);
+
+@each $color, $value in $palette {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
+}
+
+@each $color, $value in $theme-colors {
+    .border-top-#{$color} {
+        border-top-color: #{$value} !important;
+    }
+}
+.border-top-white {
+    border-top-color: white !important;
+}
+
+@each $color, $value in $grays {
+  .bg-gray-#{$color} {
+    background-color: #{$value} !important;
+  }
+}

@@ -1,0 +1,104 @@
+.quote-grid-handle {
+    cursor: grab;
+}
+
+.flex-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote-grid-handle:active {
+    cursor: grabbing;
+}
+
+.quote-grid-line {
+    display: grid;
+    grid-template-columns: $akk-unit 1fr $akk-unit;
+    align-items: center;
+
+    .quote-grid-details {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 160px 80px 70px 80px 130px;
+        align-items: center;
+        min-height: $akk-unit;
+        background-color: $white;
+        border-top: solid 1px $gray-200;
+    }
+
+    .form-control {
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+
+    &.quote-grid-head {
+        .quote-grid-details {
+            padding: 0 1rem;
+        }
+
+        .head {
+            width: calc(100% - .5rem);
+        }
+    }
+
+    &.quote-grid-section {
+
+        .quote-grid-details {
+            padding-top: 1rem;
+            border: none;
+        }
+
+        & > div {
+            padding: 0 .3rem;
+        }
+
+        .form-control {
+        }
+    }
+
+    &.quote-grid-item {
+        .quote-grid-details {
+            padding-left: .3rem;
+        }
+
+        & > div {
+            padding: 0 1rem;
+        }
+
+        input[type="number"], input[inputmode="decimal"], input[type="text"], select {
+            width: calc(100% - .15rem);
+            background-color: $gray-200;
+            border-color: transparent;
+        }
+    }
+}
+
+.quote-grid-handle,
+.quote-grid-option {
+    background-color: transparent !important;
+}
+
+.quote-grid-subtotal {
+    border-top: solid 1px $gray-200;
+    margin: 0 $akk-unit;
+    padding: 1rem 1rem 2rem;
+    background-color: $white;
+}
+
+.quote-grid {
+    & > .quote-grid-line {
+        .quote-grid-details {
+            background-color: transparent !important;
+            border: none;
+        }
+    }
+
+    .quote-section {
+        border-top: dotted 2px $gray-300;
+
+        &:first-child {
+            border: none;
+        }
+    }
+}

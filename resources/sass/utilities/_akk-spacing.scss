@@ -1,0 +1,107 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    @each $prop, $abbrev in (margin: m, padding: p) {
+      @each $size, $length in $akk-spacers {
+        .akk-#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length !important; }
+        .akk-#{$abbrev}t#{$infix}-#{$size},
+        .akk-#{$abbrev}y#{$infix}-#{$size} {
+          #{$prop}-top: $length !important;
+        }
+        .akk-#{$abbrev}r#{$infix}-#{$size},
+        .akk-#{$abbrev}x#{$infix}-#{$size} {
+          #{$prop}-right: $length !important;
+        }
+        .akk-#{$abbrev}b#{$infix}-#{$size},
+        .akk-#{$abbrev}y#{$infix}-#{$size} {
+          #{$prop}-bottom: $length !important;
+        }
+        .akk-#{$abbrev}l#{$infix}-#{$size},
+        .akk-#{$abbrev}x#{$infix}-#{$size} {
+          #{$prop}-left: $length !important;
+        }
+      }
+    }
+  }
+}
+
+.akk-m-unit {
+  margin: $akk-unit;
+}
+.akk-mx-unit {
+  margin-left: $akk-unit;
+  margin-right: $akk-unit;
+}
+.akk-ml-unit {
+  margin-left: $akk-unit;
+}
+.akk-mr-unit {
+  margin-right: $akk-unit;
+}
+.akk-my-unit {
+  margin-top: $akk-unit;
+  margin-bottom: $akk-unit;
+}
+.akk-mt-unit {
+  margin-top: $akk-unit;
+}
+.akk-mb-unit {
+  margin-bottom: $akk-unit;
+}
+
+
+.akk-p-unit {
+  padding: $akk-unit;
+}
+.akk-px-unit {
+  padding-left: $akk-unit;
+  padding-right: $akk-unit;
+}
+.akk-pl-unit {
+  padding-left: $akk-unit;
+}
+.akk-pr-unit {
+  padding-right: $akk-unit;
+}
+.akk-py-unit {
+  padding-top: $akk-unit;
+  padding-bottom: $akk-unit;
+}
+.akk-pt-unit {
+  padding-top: $akk-unit;
+}
+.akk-pb-unit {
+  padding-bottom: $akk-unit;
+}
+
+
+.akk-h-unit {
+  height: $akk-unit;
+}
+.akk-h-2unit {
+  height: $akk-unit * 2;
+}
+.akk-h-3unit {
+  height: $akk-unit * 3;
+}
+.akk-h-4unit {
+  height: $akk-unit * 4;
+}
+.akk-w-unit {
+  width: $akk-unit;
+}
+.akk-w-2unit {
+  width: $akk-unit * 2;
+}
+.akk-w-3unit {
+  width: $akk-unit * 3;
+}
+.akk-w-4unit {
+  width: $akk-unit * 4;
+}
+.akk-w-5unit {
+  width: $akk-unit * 5;
+}
+.akk-w-6unit {
+  width: $akk-unit * 6;
+}

@@ -1,0 +1,129 @@
+.bot-dialog {
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+        margin-top: 3rem;
+    }
+}
+
+.bot-dialog-waiting,
+.bot-dialog-server,
+.bot-dialog-client {
+    position: relative;
+    padding: .5rem 1rem;
+}
+
+.bot-dialog-server,
+.bot-dialog-client {
+    max-width: 75%;
+
+    &::after {
+        position: absolute;
+        bottom: -.6rem;
+        content: " ";
+    }
+}
+
+.bot-dialog-waiting {
+    background-color: $primary;
+    color: $white;
+    border-radius: .75rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: $akk-unit;
+    text-align: center;
+}
+
+.bot-dialog-server {
+    background-color: $primary;
+    color: $white;
+    border-radius: .75rem .75rem .75rem 0;
+
+    margin-right: auto;
+
+
+    &::after {
+        left: 0;
+        border-top: solid 0.5em $primary;
+        border-right: solid 0.5em transparent;
+        border-left: solid 0.5em $primary;
+        border-bottom: solid 0.5em transparent;
+    }
+    a {
+        text-decoration: underline;
+        color: inherit;
+    }
+}
+
+.bot-dialog-client {
+    background-color: $gray-500;
+    color: $white;
+    border-radius: .75rem .75rem 0 .75rem;
+    margin-left: auto;
+
+    &::after {
+        right: 0;
+        border-top: solid 0.5em $gray-500;
+        border-right: solid 0.5em $gray-500;
+        border-left: solid 0.5em transparent;
+        border-bottom: solid 0.5em transparent
+    }
+}
+
+.contact-bot {
+    .ps {
+        margin-right: 64px;
+        padding-bottom: 64px;
+        padding-top: 64px;
+    }
+}
+
+.bot-form {
+    height: 2.5rem;
+    margin-bottom: 1rem;
+
+    .btn-tertiary {
+        color: #555;
+        padding: 0;
+        line-height: 40px;
+        width: 300px;
+        margin: auto;
+        display: block;
+        border: 2px solid #555;
+        &:hover,
+        &:focus {
+            color: lighten(#555, 20%);
+            border-color: lighten(#555, 20%);
+        }
+    }
+
+    /* input file style */
+
+    .input-file {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+        + .js-labelFile {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 0 10px;
+            cursor: pointer;
+            .icon:before {
+                //font-awesome
+                content: "\f093";
+            }
+            &.has-file {
+                .icon:before {
+                    //font-awesome
+                    content: "\f00c";
+                    color: #5AAC7B;
+                }
+            }
+        }
+    }
+
+}
