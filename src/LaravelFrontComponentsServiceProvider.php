@@ -24,6 +24,10 @@ class LaravelFrontComponentsServiceProvider extends ServiceProvider
         ], 'views');
 
         $this->publishes([
+            __DIR__.'/../resources/errors' => resource_path('views/errors'),
+        ], 'views');
+
+        $this->publishes([
             __DIR__ . '/../resources/sass' => resource_path('sass/vendor/front-components'),
         ], 'sass');
 
